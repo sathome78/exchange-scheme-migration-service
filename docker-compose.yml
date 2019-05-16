@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  migration-server:
+    # replace username/repo:tag with your name and image details
+    image: olegkostiukevych/migration_service:migration_service
+    container_name: migration_server
+    restart: always
+    ports:
+    - "8080:8080"
+    volumes:
+    - /opt/scheme-migration-service/log:/opt/scheme-migration-service/log
+    depends_on:
+    - db
+    db:
+      image: mysql:5.7
+      container_name: core_database
+      env_file: .env
+      restart: always
+      ports:
+      - "3306:3306"
+      volumes:
+      - ./mysql_data/db:/var/lib/mysql
