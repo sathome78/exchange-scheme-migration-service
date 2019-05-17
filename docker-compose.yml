@@ -11,9 +11,13 @@ services:
 #    expose:
 #      - '8080'
 #    volumes:
-#    - /var:/var/scheme-migration-service/log
+#      - /var:/var/scheme-migration-service/log
 #    depends_on:
-#    - core-db
+#      - up-db
+#      - up-reset-db
+#    links:
+#      - up-db
+#      - up-reset-db
 
   up-db:
     image: mysql

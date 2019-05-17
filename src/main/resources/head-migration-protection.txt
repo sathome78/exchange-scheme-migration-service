@@ -1,1 +1,1 @@
-V1.2__add_new_table.sql
+V1__init.sql
