@@ -1,6 +1,11 @@
 version: "3.3"
 
 services:
+
+#------------------------------------------------------------
+#  up-migrate environment (do deploy uncomment below)
+#------------------------------------------------------------
+
   up-db:
     image: mysql
     container_name: core_up_database
@@ -12,6 +17,11 @@ services:
     - '3309'
     volumes:
     - db:/var/lib/mysql-one
+
+#------------------------------------------------------------
+#    up-reset-migrate environment (do deploy uncomment below)
+#------------------------------------------------------------
+
 #  up-reset-db:
 #    image: mysql
 #    container_name: core_up_reset_database
