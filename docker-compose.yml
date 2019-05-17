@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
 #------------------------------------------------------------
-#  up-migrate environment (do deploy uncomment below)
+#  up-migrate environment (for deploy uncomment below)
 #------------------------------------------------------------
 
   up-db:
@@ -19,7 +19,7 @@ services:
     - db:/var/lib/mysql-one
 
 #------------------------------------------------------------
-#    up-reset-migrate environment (do deploy uncomment below)
+#    up-reset-migrate environment (for deploy uncomment below)
 #------------------------------------------------------------
 
 #  up-reset-db:
