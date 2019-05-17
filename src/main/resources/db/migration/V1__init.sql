@@ -1,7 +1,27 @@
-SET FOREIGN_KEY_CHECKS = 0;
+-- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
+--
+-- Host: application-autoscaling-f98036b2-3432-461c-b277-0129f3660ac9.cedlveyttji9.us-east-2.rds.amazonaws.com    Database: birzha
+-- ------------------------------------------------------
+-- Server version	5.7.12-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE = @@TIME_ZONE */;
+/*!40103 SET TIME_ZONE = '+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS = 0 */;
+/*!40101 SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE = 'NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES = @@SQL_NOTES, SQL_NOTES = 0 */;
+
+--
+-- Table structure for table `2FA_GOOGLE_AUTHENTICATOR`
+--
 
 DROP TABLE IF EXISTS `2FA_GOOGLE_AUTHENTICATOR`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `2FA_GOOGLE_AUTHENTICATOR` (
   `user_id`     int(11) NOT NULL,
   `enable`      tinyint(1)  DEFAULT NULL,
@@ -14,9 +34,15 @@ CREATE TABLE `2FA_GOOGLE_AUTHENTICATOR` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `2FA_NOTIFICATION_MESSAGES`
+--
 
 DROP TABLE IF EXISTS `2FA_NOTIFICATION_MESSAGES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `2FA_NOTIFICATION_MESSAGES` (
   `id`      int(11)      NOT NULL AUTO_INCREMENT,
   `event`   varchar(64)  NOT NULL,
@@ -27,9 +53,15 @@ CREATE TABLE `2FA_NOTIFICATION_MESSAGES` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 15
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `2FA_NOTIFICATION_PRICE`
+--
 
 DROP TABLE IF EXISTS `2FA_NOTIFICATION_PRICE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `2FA_NOTIFICATION_PRICE` (
   `id`              int(11) NOT NULL AUTO_INCREMENT,
   `notificator_id`  int(11) NOT NULL,
@@ -46,13 +78,15 @@ CREATE TABLE `2FA_NOTIFICATION_PRICE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 21
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `2FA_NOTIFICATOR`
 --
 
 DROP TABLE IF EXISTS `2FA_NOTIFICATOR`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `2FA_NOTIFICATOR` (
   `id`        int(11)                                           NOT NULL AUTO_INCREMENT,
   `bean_name` varchar(256)                                      NOT NULL,
@@ -64,13 +98,15 @@ CREATE TABLE `2FA_NOTIFICATOR` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 5
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `2FA_USER_NOTIFICATION_MESSAGE_SETTINGS`
 --
 
 DROP TABLE IF EXISTS `2FA_USER_NOTIFICATION_MESSAGE_SETTINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `2FA_USER_NOTIFICATION_MESSAGE_SETTINGS` (
   `id`             int(11)                                NOT NULL AUTO_INCREMENT,
   `user_id`        int(11)                                NOT NULL,
@@ -90,13 +126,15 @@ CREATE TABLE `2FA_USER_NOTIFICATION_MESSAGE_SETTINGS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 167869
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `ADMIN_AUTHORITY`
 --
 
 DROP TABLE IF EXISTS `ADMIN_AUTHORITY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ADMIN_AUTHORITY` (
   `id`          int(11)     NOT NULL,
   `name`        varchar(45) NOT NULL,
@@ -107,13 +145,15 @@ CREATE TABLE `ADMIN_AUTHORITY` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `ADMIN_AUTHORITY_ROLE_DEFAULTS`
 --
 
 DROP TABLE IF EXISTS `ADMIN_AUTHORITY_ROLE_DEFAULTS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ADMIN_AUTHORITY_ROLE_DEFAULTS` (
   `role_id`            int(11)    NOT NULL,
   `admin_authority_id` int(11)    NOT NULL,
@@ -129,13 +169,15 @@ CREATE TABLE `ADMIN_AUTHORITY_ROLE_DEFAULTS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `API_AUTH_TOKEN`
 --
 
 DROP TABLE IF EXISTS `API_AUTH_TOKEN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `API_AUTH_TOKEN` (
   `id`           bigint(20)  NOT NULL AUTO_INCREMENT,
   `username`     varchar(45) NOT NULL,
@@ -144,15 +186,17 @@ CREATE TABLE `API_AUTH_TOKEN` (
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 251
+  AUTO_INCREMENT = 33686
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `API_PARAMS`
 --
 
 DROP TABLE IF EXISTS `API_PARAMS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `API_PARAMS` (
   `id`          int(11)      NOT NULL AUTO_INCREMENT,
   `param_name`  varchar(40)  NOT NULL,
@@ -163,13 +207,15 @@ CREATE TABLE `API_PARAMS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 6
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `API_TEMP_PASSWORD`
 --
 
 DROP TABLE IF EXISTS `API_TEMP_PASSWORD`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `API_TEMP_PASSWORD` (
   `id`                bigint(20)   NOT NULL AUTO_INCREMENT,
   `user_id`           int(11)      NOT NULL,
@@ -189,13 +235,15 @@ CREATE TABLE `API_TEMP_PASSWORD` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 2508
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `BALANCES_REPORT`
 --
 
 DROP TABLE IF EXISTS `BALANCES_REPORT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BALANCES_REPORT` (
   `id`         int(40) unsigned NOT NULL AUTO_INCREMENT,
   `file_name`  varchar(64)      NOT NULL,
@@ -205,15 +253,17 @@ CREATE TABLE `BALANCES_REPORT` (
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 4199
+  AUTO_INCREMENT = 4122
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `BCH_HARD_FORK_BALANCE_SNAPSHOT`
 --
 
 DROP TABLE IF EXISTS `BCH_HARD_FORK_BALANCE_SNAPSHOT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BCH_HARD_FORK_BALANCE_SNAPSHOT` (
   `id`               int(40)       NOT NULL AUTO_INCREMENT,
   `user_id`          int(40)       NOT NULL,
@@ -226,13 +276,15 @@ CREATE TABLE `BCH_HARD_FORK_BALANCE_SNAPSHOT` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 27340003
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `BOT_LAUNCH_SETTINGS`
 --
 
 DROP TABLE IF EXISTS `BOT_LAUNCH_SETTINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BOT_LAUNCH_SETTINGS` (
   `id`                      int(11)    NOT NULL AUTO_INCREMENT,
   `bot_trader_id`           int(11)    NOT NULL,
@@ -249,15 +301,17 @@ CREATE TABLE `BOT_LAUNCH_SETTINGS` (
   CONSTRAINT `bot_launch_settings___fk_currency_pair` FOREIGN KEY (`currency_pair_id`) REFERENCES `CURRENCY_PAIR` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 943
+  AUTO_INCREMENT = 917
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `BOT_TRADER`
 --
 
 DROP TABLE IF EXISTS `BOT_TRADER`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BOT_TRADER` (
   `id`                   int(11)    NOT NULL AUTO_INCREMENT,
   `user_id`              int(11)             DEFAULT NULL,
@@ -268,13 +322,15 @@ CREATE TABLE `BOT_TRADER` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `BOT_TRADING_SETTINGS`
 --
 
 DROP TABLE IF EXISTS `BOT_TRADING_SETTINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `BOT_TRADING_SETTINGS` (
   `id`                     int(11)             NOT NULL AUTO_INCREMENT,
   `bot_launch_settings_id` int(11)             NOT NULL,
@@ -296,15 +352,17 @@ CREATE TABLE `BOT_TRADING_SETTINGS` (
   CONSTRAINT `bot_trading_settings___fk_order_type` FOREIGN KEY (`order_type_id`) REFERENCES `ORDER_TYPE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 2092
+  AUTO_INCREMENT = 2028
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CALLBACK_LOGS`
 --
 
 DROP TABLE IF EXISTS `CALLBACK_LOGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CALLBACK_LOGS` (
   `REQUEST_ID`    int(11) NOT NULL AUTO_INCREMENT,
   `user_id`       int(40)          DEFAULT NULL,
@@ -318,15 +376,17 @@ CREATE TABLE `CALLBACK_LOGS` (
   CONSTRAINT `CALLBACK_LOGS_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 5386598
+  AUTO_INCREMENT = 12137146
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CALLBACK_SETTINGS`
 --
 
 DROP TABLE IF EXISTS `CALLBACK_SETTINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CALLBACK_SETTINGS` (
   `USER_ID`      int(11)      NOT NULL,
   `CALLBACK_URL` varchar(100) NOT NULL,
@@ -338,13 +398,15 @@ CREATE TABLE `CALLBACK_SETTINGS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_AR`
 --
 
 DROP TABLE IF EXISTS `CHAT_AR`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_AR` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -357,13 +419,15 @@ CREATE TABLE `CHAT_AR` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_CN`
 --
 
 DROP TABLE IF EXISTS `CHAT_CN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_CN` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -376,13 +440,15 @@ CREATE TABLE `CHAT_CN` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_EN`
 --
 
 DROP TABLE IF EXISTS `CHAT_EN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_EN` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -395,13 +461,15 @@ CREATE TABLE `CHAT_EN` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_IN`
 --
 
 DROP TABLE IF EXISTS `CHAT_IN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_IN` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -414,13 +482,15 @@ CREATE TABLE `CHAT_IN` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_KO`
 --
 
 DROP TABLE IF EXISTS `CHAT_KO`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_KO` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -433,13 +503,15 @@ CREATE TABLE `CHAT_KO` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CHAT_RU`
 --
 
 DROP TABLE IF EXISTS `CHAT_RU`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CHAT_RU` (
   `id`           int(11)      NOT NULL,
   `user_id`      int(11)      NOT NULL,
@@ -452,13 +524,15 @@ CREATE TABLE `CHAT_RU` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CLIENT_BANK`
 --
 
 DROP TABLE IF EXISTS `CLIENT_BANK`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CLIENT_BANK` (
   `id`          int(11)     NOT NULL AUTO_INCREMENT,
   `currency_id` int(11)              DEFAULT NULL,
@@ -471,13 +545,15 @@ CREATE TABLE `CLIENT_BANK` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 136
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMMISSION`
 --
 
 DROP TABLE IF EXISTS `COMMISSION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMMISSION` (
   `id`             int(40)       NOT NULL AUTO_INCREMENT,
   `operation_type` int(40)       NOT NULL,
@@ -498,13 +574,15 @@ CREATE TABLE `COMMISSION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 111
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMMON_REFERRAL_ROOT`
 --
 
 DROP TABLE IF EXISTS `COMMON_REFERRAL_ROOT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMMON_REFERRAL_ROOT` (
   `user_id` int(11) DEFAULT NULL,
   KEY `COMMON_REFERRAL_ROOT` (`user_id`),
@@ -513,13 +591,15 @@ CREATE TABLE `COMMON_REFERRAL_ROOT` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMPANY_EXTERNAL_WALLET_BALANCES`
 --
 
 DROP TABLE IF EXISTS `COMPANY_EXTERNAL_WALLET_BALANCES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMPANY_EXTERNAL_WALLET_BALANCES` (
   `id`                int(40) unsigned NOT NULL AUTO_INCREMENT,
   `currency_id`       int(40)          NOT NULL,
@@ -537,15 +617,17 @@ CREATE TABLE `COMPANY_EXTERNAL_WALLET_BALANCES` (
   CONSTRAINT `company_external_wallet_balances_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `CURRENCY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 348
+  AUTO_INCREMENT = 327
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMPANY_WALLET`
 --
 
 DROP TABLE IF EXISTS `COMPANY_WALLET`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMPANY_WALLET` (
   `id`                 int(11)       NOT NULL AUTO_INCREMENT,
   `currency_id`        int(11)                DEFAULT NULL,
@@ -556,15 +638,17 @@ CREATE TABLE `COMPANY_WALLET` (
   CONSTRAINT `company_wallet_ibfk_1` FOREIGN KEY (`currency_id`) REFERENCES `CURRENCY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 293
+  AUTO_INCREMENT = 272
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMPANY_WALLET_EXTERNAL`
 --
 
 DROP TABLE IF EXISTS `COMPANY_WALLET_EXTERNAL`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMPANY_WALLET_EXTERNAL` (
   `id`                     int(40) NOT NULL AUTO_INCREMENT,
   `currency_id`            int(40) NOT NULL,
@@ -580,15 +664,17 @@ CREATE TABLE `COMPANY_WALLET_EXTERNAL` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 302
+  AUTO_INCREMENT = 278
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `COMPANY_WALLET_EXTERNAL_RESERVED_ADDRESS`
 --
 
 DROP TABLE IF EXISTS `COMPANY_WALLET_EXTERNAL_RESERVED_ADDRESS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `COMPANY_WALLET_EXTERNAL_RESERVED_ADDRESS` (
   `id`             int(10) unsigned NOT NULL AUTO_INCREMENT,
   `currency_id`    int(11)          NOT NULL,
@@ -600,15 +686,17 @@ CREATE TABLE `COMPANY_WALLET_EXTERNAL_RESERVED_ADDRESS` (
   CONSTRAINT `company_wallet_external_reserved_address_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `CURRENCY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 853
+  AUTO_INCREMENT = 897
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CRYPTO_CORE_WALLET`
 --
 
 DROP TABLE IF EXISTS `CRYPTO_CORE_WALLET`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CRYPTO_CORE_WALLET` (
   `id`                       int(11)    NOT NULL AUTO_INCREMENT,
   `merchant_id`              int(11)             DEFAULT NULL,
@@ -623,15 +711,17 @@ CREATE TABLE `CRYPTO_CORE_WALLET` (
   CONSTRAINT `crypto_core_wallet___fk_merch_id` FOREIGN KEY (`merchant_id`) REFERENCES `MERCHANT` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 77
+  AUTO_INCREMENT = 76
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENCY`
 --
 
 DROP TABLE IF EXISTS `CURRENCY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENCY` (
   `id`                     int(40)                 NOT NULL AUTO_INCREMENT,
   `name`                   varchar(45)                      DEFAULT NULL,
@@ -647,15 +737,17 @@ CREATE TABLE `CURRENCY` (
   UNIQUE KEY `currency_name_index` (`name`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 297
+  AUTO_INCREMENT = 274
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENCY_LIMIT`
 --
 
 DROP TABLE IF EXISTS `CURRENCY_LIMIT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENCY_LIMIT` (
   `id`                 int(40)        NOT NULL AUTO_INCREMENT,
   `currency_id`        int(40)        NOT NULL,
@@ -677,15 +769,17 @@ CREATE TABLE `CURRENCY_LIMIT` (
   CONSTRAINT `currency_limit___fk_usr_role` FOREIGN KEY (`user_role_id`) REFERENCES `USER_ROLE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 10182
+  AUTO_INCREMENT = 9645
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENCY_PAIR`
 --
 
 DROP TABLE IF EXISTS `CURRENCY_PAIR`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENCY_PAIR` (
   `id`             int(11)              NOT NULL                              AUTO_INCREMENT,
   `currency1_id`   int(11)              NOT NULL,
@@ -699,18 +793,21 @@ CREATE TABLE `CURRENCY_PAIR` (
   `type`           enum ('MAIN', 'ICO') NOT NULL                              DEFAULT 'MAIN',
   `scale`          int(11)                                                    DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `CURRENCY_PAIR_name_uindex` (`name`),
   KEY `hidden` (`hidden`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 830
+  AUTO_INCREMENT = 796
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENCY_PAIR_LIMIT`
 --
 
 DROP TABLE IF EXISTS `CURRENCY_PAIR_LIMIT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENCY_PAIR_LIMIT` (
   `id`               int(11)        NOT NULL AUTO_INCREMENT,
   `currency_pair_id` int(11)        NOT NULL,
@@ -730,15 +827,17 @@ CREATE TABLE `CURRENCY_PAIR_LIMIT` (
   CONSTRAINT `currency_pair_limit___fk_role` FOREIGN KEY (`user_role_id`) REFERENCES `USER_ROLE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 28587
+  AUTO_INCREMENT = 27536
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENT_CURRENCY_BALANCES`
 --
 
 DROP TABLE IF EXISTS `CURRENT_CURRENCY_BALANCES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENT_CURRENCY_BALANCES` (
   `id`                       int(40) unsigned NOT NULL AUTO_INCREMENT,
   `currency_id`              int(40)          NOT NULL,
@@ -753,15 +852,17 @@ CREATE TABLE `CURRENT_CURRENCY_BALANCES` (
   CONSTRAINT `current_currency_rates_balances_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `CURRENCY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 516
+  AUTO_INCREMENT = 263
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `CURRENT_CURRENCY_RATES`
 --
 
 DROP TABLE IF EXISTS `CURRENT_CURRENCY_RATES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CURRENT_CURRENCY_RATES` (
   `id`                       int(40) unsigned NOT NULL AUTO_INCREMENT,
   `currency_id`              int(40)          NOT NULL,
@@ -776,15 +877,17 @@ CREATE TABLE `CURRENT_CURRENCY_RATES` (
   CONSTRAINT `current_currency_rates_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `CURRENCY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 516
+  AUTO_INCREMENT = 263
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `EXORDERS`
 --
 
 DROP TABLE IF EXISTS `EXORDERS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `EXORDERS` (
   `id`                       int(40)               NOT NULL AUTO_INCREMENT,
   `user_id`                  int(40)               NOT NULL,
@@ -814,7 +917,6 @@ CREATE TABLE `EXORDERS` (
   KEY `EXORDERS_PAIR_STATUS_DATE_ACCEPTION` (`currency_pair_id`, `status_id`, `date_acception`),
   KEY `exorders___fk_source_id` (`order_source_id`),
   KEY `exorders__status_date_accept` (`status_id`, `date_acception`),
-  KEY `composite_index_exorder_1` (`status_id`, `operation_type_id`, `currency_pair_id`, `user_id`, `user_acceptor_id`),
   CONSTRAINT `exorders___fk_source_id` FOREIGN KEY (`order_source_id`) REFERENCES `EXORDERS` (`id`),
   CONSTRAINT `fk_COMMISSION` FOREIGN KEY (`commission_id`) REFERENCES `COMMISSION` (`id`)
     ON DELETE NO ACTION
@@ -836,15 +938,17 @@ CREATE TABLE `EXORDERS` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 46692024
+  AUTO_INCREMENT = 49987196
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `GTAG_REFILL_REQUESTS`
 --
 
 DROP TABLE IF EXISTS `GTAG_REFILL_REQUESTS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `GTAG_REFILL_REQUESTS` (
   `USER_ID` int(11) NOT NULL,
   `COUNT`   int(11) DEFAULT NULL,
@@ -853,106 +957,130 @@ CREATE TABLE `GTAG_REFILL_REQUESTS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `IEO_CLAIM`
 --
 
 DROP TABLE IF EXISTS `IEO_CLAIM`;
-
-create table IEO_CLAIM
-(
-  id            int auto_increment
-    primary key,
-  ieo_id        int                                                                     not null,
-  currency_name varchar(64)                                                             not null,
-  maker_id      int                                                                     not null,
-  user_id       int                                                                     not null,
-  amount        double(40, 9)                                                           not null,
-  rate          double(40, 9)                                                           not null,
-  price_in_btc  double(40, 9)                                                           not null,
-  created       timestamp default CURRENT_TIMESTAMP                                     not null,
-  status        enum ('SUCCESS', 'FAILED', 'NONE', 'REVOKED') default 'NONE'            null,
-  constraint IEO_CLAIM_ibfk_1 foreign key (user_id) references USER (id),
-  constraint IEO_CLAIM_ibfk_2 foreign key (maker_id) references USER (id),
-  constraint IEO_CLAIM_ibfk_3 foreign key (ieo_id) references IEO_DETAILS (id)
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `IEO_CLAIM` (
+  `id`            int(11)       NOT NULL                        AUTO_INCREMENT,
+  `ieo_id`        int(11)       NOT NULL,
+  `currency_name` varchar(64)   NOT NULL,
+  `maker_id`      int(11)       NOT NULL,
+  `user_id`       int(11)       NOT NULL,
+  `amount`        double(40, 9) NOT NULL,
+  `rate`          double(40, 9) NOT NULL,
+  `price_in_btc`  double(40, 9) NOT NULL,
+  `created`       timestamp     NOT NULL                        DEFAULT CURRENT_TIMESTAMP,
+  `status`        enum ('SUCCESS', 'FAILED', 'NONE', 'REVOKED') DEFAULT 'NONE',
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `maker_id` (`maker_id`),
+  KEY `ieo_id` (`ieo_id`),
+  CONSTRAINT `IEO_CLAIM_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`),
+  CONSTRAINT `IEO_CLAIM_ibfk_2` FOREIGN KEY (`maker_id`) REFERENCES `USER` (`id`),
+  CONSTRAINT `IEO_CLAIM_ibfk_3` FOREIGN KEY (`ieo_id`) REFERENCES `IEO_DETAILS` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 18
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `IEO_DETAILS`
 --
 
 DROP TABLE IF EXISTS `IEO_DETAILS`;
-
-create table IEO_DETAILS
-(
-  id                   int auto_increment
-    primary key,
-  currency_name        varchar(10)                                                                                                   not null,
-  currency_description varchar(255)                                                                                                  null,
-  maker_id             int                                                                                                           not null,
-  rate                 double                                                                                                        not null,
-  amount               double                                                                                                        not null,
-  available_amount     double default 0                                                                                              null,
-  contributors         int default 0                                                                                                 null,
-  status               enum ('PENDING', 'RUNNING', 'SUCCEEDED', 'FAILED', 'PROCESSING_FAIL', 'TERMINATED') default 'PENDING'         null,
-  min_amount           double default 0                                                                                              null,
-  max_amount_per_claim double default 0                                                                                              null,
-  max_amount_per_user  double default 0                                                                                              null,
-  starts_at            datetime                                                                                                      not null,
-  terminates_at        datetime                                                                                                      not null,
-  created_at           timestamp default CURRENT_TIMESTAMP                                                                           not null,
-  created_by           int                                                                                                           not null
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `IEO_DETAILS` (
+  `id`                   int(11)     NOT NULL                                                                AUTO_INCREMENT,
+  `currency_name`        varchar(10) NOT NULL,
+  `currency_description` varchar(255)                                                                        DEFAULT NULL,
+  `maker_id`             int(11)     NOT NULL,
+  `rate`                 double      NOT NULL,
+  `amount`               double      NOT NULL,
+  `available_amount`     double                                                                              DEFAULT '0',
+  `contributors`         int(11)                                                                             DEFAULT '0',
+  `status`               enum ('PENDING', 'RUNNING', 'SUCCEEDED', 'FAILED', 'PROCESSING_FAIL', 'TERMINATED') DEFAULT 'PENDING',
+  `min_amount`           double                                                                              DEFAULT '0',
+  `max_amount_per_claim` double                                                                              DEFAULT '0',
+  `max_amount_per_user`  double                                                                              DEFAULT '0',
+  `starts_at`            datetime    NOT NULL,
+  `terminates_at`        datetime    NOT NULL,
+  `created_at`           timestamp   NOT NULL                                                                DEFAULT CURRENT_TIMESTAMP,
+  `created_by`           int(11)     NOT NULL,
+  `description`          text,
+  `logo`                 varchar(255)                                                                        DEFAULT NULL,
+  PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 5
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `IEO_RESTRICTED_COUNTRY`
 --
 
 DROP TABLE IF EXISTS `IEO_RESTRICTED_COUNTRY`;
-
-create table IEO_RESTRICTED_COUNTRY
-(
-  ieo_id       int         not null,
-  country_code varchar(64) not null,
-  constraint ieo_id
-  unique (ieo_id, country_code),
-  constraint IEO_RESTRICTED_COUNTRY_ibfk_1
-  foreign key (ieo_id) references IEO_DETAILS (id)
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `IEO_RESTRICTED_COUNTRY` (
+  `ieo_id`       int(11)     NOT NULL,
+  `country_code` varchar(64) NOT NULL,
+  UNIQUE KEY `ieo_id` (`ieo_id`, `country_code`),
+  CONSTRAINT `IEO_RESTRICTED_COUNTRY_ibfk_1` FOREIGN KEY (`ieo_id`) REFERENCES `IEO_DETAILS` (`id`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `IEO_RESULT`
 --
 
 DROP TABLE IF EXISTS `IEO_RESULT`;
-
-create table IEO_RESULT
-(
-  claim_id         int                                                    null,
-  ieo_id           int                                                    not null,
-  available_amount double(40, 9) default 0.000000000                      null,
-  status           enum ('SUCCESS', 'FAILED', 'NONE') default 'NONE'      not null,
-  constraint IEO_RESULT_ibfk_1
-  foreign key (ieo_id) references IEO_DETAILS (id)
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `IEO_RESULT` (
+  `claim_id`         int(11)                                     DEFAULT NULL,
+  `ieo_id`           int(11)                            NOT NULL,
+  `available_amount` double(40, 9)                               DEFAULT '0.000000000',
+  `status`           enum ('SUCCESS', 'FAILED', 'NONE') NOT NULL DEFAULT 'NONE',
+  KEY `ieo_id` (`ieo_id`),
+  CONSTRAINT `IEO_RESULT_ibfk_1` FOREIGN KEY (`ieo_id`) REFERENCES `IEO_DETAILS` (`id`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `IEO_SUBSCRIBE`
+--
+
+DROP TABLE IF EXISTS `IEO_SUBSCRIBE`;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `IEO_SUBSCRIBE` (
+  `email`              varchar(255) NOT NULL,
+  `email_subscribe`    tinyint(1)   NOT NULL DEFAULT '0',
+  `telegram_subscribe` tinyint(1)   NOT NULL DEFAULT '0',
+  PRIMARY KEY (`email`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `INPUT_OUTPUT_REPORT`
 --
 
 DROP TABLE IF EXISTS `INPUT_OUTPUT_REPORT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `INPUT_OUTPUT_REPORT` (
   `id`         int(40) unsigned NOT NULL AUTO_INCREMENT,
   `file_name`  varchar(64)      NOT NULL,
@@ -962,15 +1090,17 @@ CREATE TABLE `INPUT_OUTPUT_REPORT` (
   PRIMARY KEY (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 3845
+  AUTO_INCREMENT = 3768
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `INTERNAL_WALLET_BALANCES`
 --
 
 DROP TABLE IF EXISTS `INTERNAL_WALLET_BALANCES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `INTERNAL_WALLET_BALANCES` (
   `id`                int(40) unsigned NOT NULL AUTO_INCREMENT,
   `currency_id`       int(40)          NOT NULL,
@@ -988,15 +1118,17 @@ CREATE TABLE `INTERNAL_WALLET_BALANCES` (
   CONSTRAINT `internal_wallet_balances_role_id_fk` FOREIGN KEY (`role_id`) REFERENCES `USER_ROLE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 5497
+  AUTO_INCREMENT = 5125
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `INVOICE_BANK`
 --
 
 DROP TABLE IF EXISTS `INVOICE_BANK`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `INVOICE_BANK` (
   `id`             int(11)    NOT NULL AUTO_INCREMENT,
   `currency_id`    int(11)             DEFAULT NULL,
@@ -1012,13 +1144,15 @@ CREATE TABLE `INVOICE_BANK` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 12
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `INVOICE_OPERATION_DIRECTION`
 --
 
 DROP TABLE IF EXISTS `INVOICE_OPERATION_DIRECTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `INVOICE_OPERATION_DIRECTION` (
   `id`   int(11)                                         NOT NULL AUTO_INCREMENT,
   `name` enum ('REFILL', 'WITHDRAW', 'TRANSFER_VOUCHER') NOT NULL,
@@ -1028,14 +1162,15 @@ CREATE TABLE `INVOICE_OPERATION_DIRECTION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 4
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `INVOICE_OPERATION_PERMISSION`
 --
 
 DROP TABLE IF EXISTS `INVOICE_OPERATION_PERMISSION`;
-
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `INVOICE_OPERATION_PERMISSION` (
   `id`   int(11)     NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -1044,13 +1179,15 @@ CREATE TABLE `INVOICE_OPERATION_PERMISSION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `IP_Log`
 --
 
 DROP TABLE IF EXISTS `IP_Log`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `IP_Log` (
   `id`      int(40)      NOT NULL AUTO_INCREMENT,
   `ip`      varchar(100) NOT NULL,
@@ -1066,13 +1203,15 @@ CREATE TABLE `IP_Log` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 168
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `KYC_COUNTRY_CODES`
 --
 
 DROP TABLE IF EXISTS `KYC_COUNTRY_CODES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `KYC_COUNTRY_CODES` (
   `id`           int(40) unsigned NOT NULL AUTO_INCREMENT,
   `country_name` varchar(64)      NOT NULL,
@@ -1082,13 +1221,15 @@ CREATE TABLE `KYC_COUNTRY_CODES` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 244
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `KYC_LANGUAGE_CODES`
 --
 
 DROP TABLE IF EXISTS `KYC_LANGUAGE_CODES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `KYC_LANGUAGE_CODES` (
   `id`            int(40) unsigned NOT NULL AUTO_INCREMENT,
   `language_name` varchar(64)      NOT NULL,
@@ -1098,13 +1239,15 @@ CREATE TABLE `KYC_LANGUAGE_CODES` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 100
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `MERCHANT`
 --
 
 DROP TABLE IF EXISTS `MERCHANT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MERCHANT` (
   `id`                         int(11)                                            NOT NULL AUTO_INCREMENT,
   `description`                varchar(50)                                                 DEFAULT NULL,
@@ -1120,15 +1263,17 @@ CREATE TABLE `MERCHANT` (
   KEY `FK_merchant_transaction_source_type` (`transaction_source_type_id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 309
+  AUTO_INCREMENT = 287
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `MERCHANT_CURRENCY`
 --
 
 DROP TABLE IF EXISTS `MERCHANT_CURRENCY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MERCHANT_CURRENCY` (
   `merchant_id`                               int(11)        NOT NULL,
   `currency_id`                               int(11)        NOT NULL,
@@ -1165,13 +1310,15 @@ CREATE TABLE `MERCHANT_CURRENCY` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `MERCHANT_IMAGE`
 --
 
 DROP TABLE IF EXISTS `MERCHANT_IMAGE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MERCHANT_IMAGE` (
   `id`               int(11)      NOT NULL AUTO_INCREMENT,
   `merchant_id`      int(11)      NOT NULL,
@@ -1187,15 +1334,17 @@ CREATE TABLE `MERCHANT_IMAGE` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 1254
+  AUTO_INCREMENT = 1154
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `MERCHANT_SPEC_PARAMETERS`
 --
 
 DROP TABLE IF EXISTS `MERCHANT_SPEC_PARAMETERS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `MERCHANT_SPEC_PARAMETERS` (
   `id`          int(40)      NOT NULL AUTO_INCREMENT,
   `merchant_id` int(40)      NOT NULL,
@@ -1208,15 +1357,17 @@ CREATE TABLE `MERCHANT_SPEC_PARAMETERS` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 40
+  AUTO_INCREMENT = 39
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NEWS`
 --
 
 DROP TABLE IF EXISTS `NEWS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NEWS` (
   `id`          int(11)   NOT NULL AUTO_INCREMENT,
   `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -1230,13 +1381,15 @@ CREATE TABLE `NEWS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 257
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NEWS_EXT`
 --
 
 DROP TABLE IF EXISTS `NEWS_EXT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NEWS_EXT` (
   `id`            int(11)   NOT NULL AUTO_INCREMENT,
   `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1252,13 +1405,15 @@ CREATE TABLE `NEWS_EXT` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NEWS_TYPE`
 --
 
 DROP TABLE IF EXISTS `NEWS_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NEWS_TYPE` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100)     DEFAULT NULL,
@@ -1267,13 +1422,15 @@ CREATE TABLE `NEWS_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 8
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NEWS_VARIANTS`
 --
 
 DROP TABLE IF EXISTS `NEWS_VARIANTS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NEWS_VARIANTS` (
   `news_id`      int(11)                             NOT NULL,
   `title`        varchar(100)                                 DEFAULT NULL
@@ -1293,13 +1450,15 @@ CREATE TABLE `NEWS_VARIANTS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NEWS_VARIANTS_EXT`
 --
 
 DROP TABLE IF EXISTS `NEWS_VARIANTS_EXT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NEWS_VARIANTS_EXT` (
   `id`                  int(11)   NOT NULL AUTO_INCREMENT,
   `news_id`             int(11)   NOT NULL,
@@ -1322,13 +1481,15 @@ CREATE TABLE `NEWS_VARIANTS_EXT` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 17
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NOTIFICATION`
 --
 
 DROP TABLE IF EXISTS `NOTIFICATION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NOTIFICATION` (
   `id`                    bigint(20)   NOT NULL AUTO_INCREMENT,
   `user_id`               int(11)      NOT NULL,
@@ -1350,13 +1511,15 @@ CREATE TABLE `NOTIFICATION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 12227359
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NOTIFICATION_EVENT`
 --
 
 DROP TABLE IF EXISTS `NOTIFICATION_EVENT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NOTIFICATION_EVENT` (
   `id`                        int(11)     NOT NULL,
   `name`                      varchar(20) NOT NULL,
@@ -1368,13 +1531,15 @@ CREATE TABLE `NOTIFICATION_EVENT` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `NOTIFICATION_OPTIONS`
 --
 
 DROP TABLE IF EXISTS `NOTIFICATION_OPTIONS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `NOTIFICATION_OPTIONS` (
   `notification_event_id` int(11)    NOT NULL,
   `user_id`               int(11)    NOT NULL,
@@ -1393,13 +1558,15 @@ CREATE TABLE `NOTIFICATION_OPTIONS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `OPEN_API_USER_TOKEN`
 --
 
 DROP TABLE IF EXISTS `OPEN_API_USER_TOKEN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `OPEN_API_USER_TOKEN` (
   `id`                 bigint(20)  NOT NULL AUTO_INCREMENT,
   `user_id`            int(11)     NOT NULL,
@@ -1420,15 +1587,17 @@ CREATE TABLE `OPEN_API_USER_TOKEN` (
     ON UPDATE CASCADE
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 1732
+  AUTO_INCREMENT = 1820
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `OPERATION_TYPE`
 --
 
 DROP TABLE IF EXISTS `OPERATION_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `OPERATION_TYPE` (
   `id`          int(40)     NOT NULL AUTO_INCREMENT,
   `name`        varchar(45) NOT NULL,
@@ -1439,13 +1608,15 @@ CREATE TABLE `OPERATION_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 10
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `OPERATION_TYPE_DIRECTION`
 --
 
 DROP TABLE IF EXISTS `OPERATION_TYPE_DIRECTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `OPERATION_TYPE_DIRECTION` (
   `operation_type_id`      int(11) NOT NULL,
   `operation_direction_id` int(11) NOT NULL,
@@ -1456,13 +1627,15 @@ CREATE TABLE `OPERATION_TYPE_DIRECTION` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `ORDER_STATUS`
 --
 
 DROP TABLE IF EXISTS `ORDER_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ORDER_STATUS` (
   `id`          int(40)     NOT NULL AUTO_INCREMENT,
   `name`        varchar(45) NOT NULL,
@@ -1473,13 +1646,15 @@ CREATE TABLE `ORDER_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 8
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `ORDER_TYPE`
 --
 
 DROP TABLE IF EXISTS `ORDER_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ORDER_TYPE` (
   `id`   int(11)     NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL,
@@ -1489,13 +1664,15 @@ CREATE TABLE `ORDER_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `PHRASE_TEMPLATE`
 --
 
 DROP TABLE IF EXISTS `PHRASE_TEMPLATE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `PHRASE_TEMPLATE` (
   `id`       int(11)      NOT NULL AUTO_INCREMENT,
   `template` varchar(100) NOT NULL,
@@ -1507,13 +1684,15 @@ CREATE TABLE `PHRASE_TEMPLATE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 17
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `POLICY`
 --
 
 DROP TABLE IF EXISTS `POLICY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `POLICY` (
   `id`          int(11)      NOT NULL AUTO_INCREMENT,
   `name`        varchar(255) NOT NULL,
@@ -1525,13 +1704,15 @@ CREATE TABLE `POLICY` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 2
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `QUBERA_RESPONSE_LOG`
 --
 
 DROP TABLE IF EXISTS `QUBERA_RESPONSE_LOG`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `QUBERA_RESPONSE_LOG` (
   `paymentId`       int(11)      NOT NULL,
   `messageId`       int(11)      NOT NULL,
@@ -1549,13 +1730,15 @@ CREATE TABLE `QUBERA_RESPONSE_LOG` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `QUBERA_USER_DETAILS`
 --
 
 DROP TABLE IF EXISTS `QUBERA_USER_DETAILS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `QUBERA_USER_DETAILS` (
   `user_id`        int(11)      NOT NULL,
   `currency_id`    int(11)      NOT NULL,
@@ -1570,13 +1753,15 @@ CREATE TABLE `QUBERA_USER_DETAILS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFERRAL_LEVEL`
 --
 
 DROP TABLE IF EXISTS `REFERRAL_LEVEL`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFERRAL_LEVEL` (
   `id`       int(11)   NOT NULL AUTO_INCREMENT,
   `level`    int(11)   NOT NULL,
@@ -1587,13 +1772,15 @@ CREATE TABLE `REFERRAL_LEVEL` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 17
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFERRAL_TRANSACTION`
 --
 
 DROP TABLE IF EXISTS `REFERRAL_TRANSACTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFERRAL_TRANSACTION` (
   `id`                int(11)                   NOT NULL AUTO_INCREMENT,
   `order_id`          int(11)                            DEFAULT NULL,
@@ -1615,15 +1802,17 @@ CREATE TABLE `REFERRAL_TRANSACTION` (
   CONSTRAINT `REFERRAL_TRANSACTION_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 31649207
+  AUTO_INCREMENT = 31720947
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFERRAL_USER_GRAPH`
 --
 
 DROP TABLE IF EXISTS `REFERRAL_USER_GRAPH`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFERRAL_USER_GRAPH` (
   `child`  int(11) NOT NULL DEFAULT '0',
   `parent` int(11) NOT NULL DEFAULT '0',
@@ -1636,13 +1825,15 @@ CREATE TABLE `REFERRAL_USER_GRAPH` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFILL_REQUEST`
 --
 
 DROP TABLE IF EXISTS `REFILL_REQUEST`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFILL_REQUEST` (
   `id`                        int(11)   NOT NULL AUTO_INCREMENT,
   `amount`                    decimal(40, 9)     DEFAULT NULL,
@@ -1653,7 +1844,7 @@ CREATE TABLE `REFILL_REQUEST` (
   `user_id`                   int(11)            DEFAULT NULL,
   `commission_id`             int(11)            DEFAULT NULL,
   `merchant_id`               int(11)            DEFAULT NULL,
-  `merchant_transaction_id`   varchar(128)       DEFAULT NULL,
+  `merchant_transaction_id`   varchar(256)       DEFAULT NULL,
   `refill_request_param_id`   int(11)            DEFAULT NULL,
   `refill_request_address_id` int(11)            DEFAULT NULL,
   `admin_holder_id`           int(11)            DEFAULT NULL,
@@ -1685,15 +1876,17 @@ CREATE TABLE `REFILL_REQUEST` (
   CONSTRAINT `FK_refill_request_user` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 842292
+  AUTO_INCREMENT = 952457
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFILL_REQUEST_ADDRESS`
 --
 
 DROP TABLE IF EXISTS `REFILL_REQUEST_ADDRESS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFILL_REQUEST_ADDRESS` (
   `id`                  int(11)      NOT NULL AUTO_INCREMENT,
   `currency_id`         int(11)      NOT NULL,
@@ -1718,15 +1911,17 @@ CREATE TABLE `REFILL_REQUEST_ADDRESS` (
   CONSTRAINT `FK_refill_request_address_user` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 1120844
+  AUTO_INCREMENT = 1352896
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFILL_REQUEST_CONFIRMATION`
 --
 
 DROP TABLE IF EXISTS `REFILL_REQUEST_CONFIRMATION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFILL_REQUEST_CONFIRMATION` (
   `id`                  int(11)        NOT NULL AUTO_INCREMENT,
   `refill_request_id`   int(11)        NOT NULL,
@@ -1739,15 +1934,17 @@ CREATE TABLE `REFILL_REQUEST_CONFIRMATION` (
   CONSTRAINT `FK_refill_request_confirmation_refill_request` FOREIGN KEY (`refill_request_id`) REFERENCES `REFILL_REQUEST` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 13384907
+  AUTO_INCREMENT = 15618970
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFILL_REQUEST_PARAM`
 --
 
 DROP TABLE IF EXISTS `REFILL_REQUEST_PARAM`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFILL_REQUEST_PARAM` (
   `id`                    int(11) NOT NULL,
   `recipient_bank_id`     int(11)      DEFAULT NULL,
@@ -1765,13 +1962,15 @@ CREATE TABLE `REFILL_REQUEST_PARAM` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REFILL_REQUEST_STATUS`
 --
 
 DROP TABLE IF EXISTS `REFILL_REQUEST_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REFILL_REQUEST_STATUS` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100)     DEFAULT NULL,
@@ -1780,13 +1979,15 @@ CREATE TABLE `REFILL_REQUEST_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 18
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REPORT_MAILING_PARAMS`
 --
 
 DROP TABLE IF EXISTS `REPORT_MAILING_PARAMS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REPORT_MAILING_PARAMS` (
   `id`          int(11)      NOT NULL AUTO_INCREMENT,
   `param_name`  varchar(50)  NOT NULL,
@@ -1797,13 +1998,15 @@ CREATE TABLE `REPORT_MAILING_PARAMS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `REPORT_SUBSCRIBERS`
 --
 
 DROP TABLE IF EXISTS `REPORT_SUBSCRIBERS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `REPORT_SUBSCRIBERS` (
   `id`    int(11)     NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
@@ -1811,15 +2014,17 @@ CREATE TABLE `REPORT_SUBSCRIBERS` (
   UNIQUE KEY `REPORT_SUBSCRIBERS_email_uindex` (`email`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 14
+  AUTO_INCREMENT = 15
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SERVICE_ALERTS`
 --
 
 DROP TABLE IF EXISTS `SERVICE_ALERTS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SERVICE_ALERTS` (
   `alert_type`    enum ('UPDATE', 'TECHNICAL_WORKS') NOT NULL,
   `enable`        tinyint(1)                         NOT NULL DEFAULT '0',
@@ -1829,13 +2034,15 @@ CREATE TABLE `SERVICE_ALERTS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SESSION_LIFE_TIME_TYPE`
 --
 
 DROP TABLE IF EXISTS `SESSION_LIFE_TIME_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SESSION_LIFE_TIME_TYPE` (
   `id`     int(11)      NOT NULL AUTO_INCREMENT,
   `name`   varchar(100) NOT NULL,
@@ -1846,13 +2053,15 @@ CREATE TABLE `SESSION_LIFE_TIME_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SESSION_PARAMS`
 --
 
 DROP TABLE IF EXISTS `SESSION_PARAMS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SESSION_PARAMS` (
   `id`                   int(11) NOT NULL AUTO_INCREMENT,
   `user_id`              int(11) NOT NULL,
@@ -1870,15 +2079,17 @@ CREATE TABLE `SESSION_PARAMS` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 7063
+  AUTO_INCREMENT = 7771
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SMS_SUBSCRIPTION`
 --
 
 DROP TABLE IF EXISTS `SMS_SUBSCRIPTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SMS_SUBSCRIPTION` (
   `id`                 int(11)                                   NOT NULL AUTO_INCREMENT,
   `user_id`            int(11)                                   NOT NULL,
@@ -1896,13 +2107,15 @@ CREATE TABLE `SMS_SUBSCRIPTION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 10242
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `STOCK_CURRENCY_PAIR`
 --
 
 DROP TABLE IF EXISTS `STOCK_CURRENCY_PAIR`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STOCK_CURRENCY_PAIR` (
   `stock_exchange_id` int(11) NOT NULL,
   `currency_pair_id`  int(11) NOT NULL,
@@ -1913,13 +2126,15 @@ CREATE TABLE `STOCK_CURRENCY_PAIR` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `STOCK_EXCHANGE`
 --
 
 DROP TABLE IF EXISTS `STOCK_EXCHANGE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STOCK_EXCHANGE` (
   `id`                int(11)     NOT NULL AUTO_INCREMENT,
   `name`              varchar(45) NOT NULL,
@@ -1936,13 +2151,15 @@ CREATE TABLE `STOCK_EXCHANGE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 15
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `STOCK_EXCHANGE_CURRENCY_ALIAS`
 --
 
 DROP TABLE IF EXISTS `STOCK_EXCHANGE_CURRENCY_ALIAS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STOCK_EXCHANGE_CURRENCY_ALIAS` (
   `stock_exchange_id` int(11) NOT NULL,
   `currency_id`       int(11) NOT NULL,
@@ -1954,13 +2171,15 @@ CREATE TABLE `STOCK_EXCHANGE_CURRENCY_ALIAS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `STOCK_EXRATE`
 --
 
 DROP TABLE IF EXISTS `STOCK_EXRATE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STOCK_EXRATE` (
   `id`                bigint(20) NOT NULL AUTO_INCREMENT,
   `currency_pair_id`  int(11)    NOT NULL,
@@ -1980,15 +2199,17 @@ CREATE TABLE `STOCK_EXRATE` (
   CONSTRAINT `fk_stock_exchange_id` FOREIGN KEY (`stock_exchange_id`) REFERENCES `STOCK_EXCHANGE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 3341159
+  AUTO_INCREMENT = 3521857
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `STOP_ORDERS`
 --
 
 DROP TABLE IF EXISTS `STOP_ORDERS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `STOP_ORDERS` (
   `id`                      int(40)       NOT NULL AUTO_INCREMENT,
   `user_id`                 int(40)       NOT NULL,
@@ -2032,15 +2253,17 @@ CREATE TABLE `STOP_ORDERS` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 7581
+  AUTO_INCREMENT = 8302
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SURVEY`
 --
 
 DROP TABLE IF EXISTS `SURVEY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SURVEY` (
   `id`     int(11)        NOT NULL AUTO_INCREMENT,
   `token`  varchar(100)   NOT NULL,
@@ -2052,13 +2275,15 @@ CREATE TABLE `SURVEY` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 2
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SURVEY_ITEM`
 --
 
 DROP TABLE IF EXISTS `SURVEY_ITEM`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SURVEY_ITEM` (
   `id`        int(11)      NOT NULL AUTO_INCREMENT,
   `survey_id` int(11)      NOT NULL,
@@ -2072,13 +2297,15 @@ CREATE TABLE `SURVEY_ITEM` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 18
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `SURVEY_LANG_PARAM`
 --
 
 DROP TABLE IF EXISTS `SURVEY_LANG_PARAM`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SURVEY_LANG_PARAM` (
   `id`          int(11)       NOT NULL AUTO_INCREMENT,
   `survey_id`   int(11)       NOT NULL,
@@ -2091,13 +2318,15 @@ CREATE TABLE `SURVEY_LANG_PARAM` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TELEGRAM_CHAT_EN`
 --
 
 DROP TABLE IF EXISTS `TELEGRAM_CHAT_EN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TELEGRAM_CHAT_EN` (
   `id`                     int(11)      NOT NULL AUTO_INCREMENT,
   `message_id`             int(11)      NOT NULL,
@@ -2114,15 +2343,17 @@ CREATE TABLE `TELEGRAM_CHAT_EN` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 6422
+  AUTO_INCREMENT = 10570
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TELEGRAM_SUBSCRIPTION`
 --
 
 DROP TABLE IF EXISTS `TELEGRAM_SUBSCRIPTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TELEGRAM_SUBSCRIPTION` (
   `id`                 int(11)                                   NOT NULL AUTO_INCREMENT,
   `user_id`            int(11)                                   NOT NULL,
@@ -2138,13 +2369,15 @@ CREATE TABLE `TELEGRAM_SUBSCRIPTION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 1793
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TEMPORAL_TOKEN`
 --
 
 DROP TABLE IF EXISTS `TEMPORAL_TOKEN`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TEMPORAL_TOKEN` (
   `id`            int(40)     NOT NULL AUTO_INCREMENT,
   `value`         varchar(45) NOT NULL,
@@ -2165,15 +2398,17 @@ CREATE TABLE `TEMPORAL_TOKEN` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 165866
+  AUTO_INCREMENT = 173883
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TOKEN_TYPE`
 --
 
 DROP TABLE IF EXISTS `TOKEN_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TOKEN_TYPE` (
   `id`   int(40)     NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -2182,13 +2417,15 @@ CREATE TABLE `TOKEN_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 5
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TRANSACTION`
 --
 
 DROP TABLE IF EXISTS `TRANSACTION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TRANSACTION` (
   `id`                                int(40)       NOT NULL                                                                                                       AUTO_INCREMENT,
   `user_wallet_id`                    int(11)       NOT NULL,
@@ -2251,15 +2488,17 @@ CREATE TABLE `TRANSACTION` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 125558121
+  AUTO_INCREMENT = 138266048
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TRANSACTION_SOURCE_TYPE`
 --
 
 DROP TABLE IF EXISTS `TRANSACTION_SOURCE_TYPE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TRANSACTION_SOURCE_TYPE` (
   `id`   int(40)     NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -2269,13 +2508,15 @@ CREATE TABLE `TRANSACTION_SOURCE_TYPE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 14
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TRANSACTION_STATUS`
 --
 
 DROP TABLE IF EXISTS `TRANSACTION_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TRANSACTION_STATUS` (
   `id`          int(40)     NOT NULL AUTO_INCREMENT,
   `name`        varchar(45) NOT NULL,
@@ -2286,13 +2527,15 @@ CREATE TABLE `TRANSACTION_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TRANSFER_REQUEST`
 --
 
 DROP TABLE IF EXISTS `TRANSFER_REQUEST`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TRANSFER_REQUEST` (
   `id`                       int(11)   NOT NULL AUTO_INCREMENT,
   `amount`                   decimal(40, 9)     DEFAULT NULL,
@@ -2322,15 +2565,17 @@ CREATE TABLE `TRANSFER_REQUEST` (
   CONSTRAINT `FK_transfer_request_user_2` FOREIGN KEY (`recipient_user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 1919
+  AUTO_INCREMENT = 2399
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `TRANSFER_REQUEST_STATUS`
 --
 
 DROP TABLE IF EXISTS `TRANSFER_REQUEST_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `TRANSFER_REQUEST_STATUS` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100)     DEFAULT NULL,
@@ -2339,13 +2584,15 @@ CREATE TABLE `TRANSFER_REQUEST_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 6
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER`
 --
 
 DROP TABLE IF EXISTS `USER`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER` (
   `id`                     int(40)     NOT NULL                      AUTO_INCREMENT,
   `pub_id`                 char(21)                                  DEFAULT NULL,
@@ -2372,7 +2619,7 @@ CREATE TABLE `USER` (
   `GA`                     varchar(100)                              DEFAULT '',
   `kyc_verification_step`  smallint(1) NOT NULL                      DEFAULT '0',
   `kyc_status`             varchar(55) NOT NULL                      DEFAULT 'none',
-  `kyc_reference`          varchar(55)                               DEFAULT NULL,
+  `kyc_reference`          varchar(55) NOT NULL                      DEFAULT 'none',
   `country`                varchar(255)                              DEFAULT NULL,
   `firstName`              varchar(255)                              DEFAULT NULL,
   `lastName`               varchar(255)                              DEFAULT NULL,
@@ -2394,15 +2641,17 @@ CREATE TABLE `USER` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 110577
+  AUTO_INCREMENT = 116610
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ADMIN_AUTHORITY`
 --
 
 DROP TABLE IF EXISTS `USER_ADMIN_AUTHORITY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ADMIN_AUTHORITY` (
   `user_id`            int(11)    NOT NULL,
   `admin_authority_id` int(11)    NOT NULL,
@@ -2418,13 +2667,15 @@ CREATE TABLE `USER_ADMIN_AUTHORITY` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ADMIN_AUTHORITY_ROLE_APPLICATION`
 --
 
 DROP TABLE IF EXISTS `USER_ADMIN_AUTHORITY_ROLE_APPLICATION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ADMIN_AUTHORITY_ROLE_APPLICATION` (
   `user_id`            int(11) NOT NULL,
   `admin_authority_id` int(11) NOT NULL,
@@ -2439,13 +2690,15 @@ CREATE TABLE `USER_ADMIN_AUTHORITY_ROLE_APPLICATION` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_COMMENT`
 --
 
 DROP TABLE IF EXISTS `USER_COMMENT`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_COMMENT` (
   `id`              int(40)      NOT NULL AUTO_INCREMENT,
   `user_id`         int(40)      NOT NULL,
@@ -2469,15 +2722,17 @@ CREATE TABLE `USER_COMMENT` (
     ON UPDATE NO ACTION
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 1562098
+  AUTO_INCREMENT = 1782853
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_COMMENT_TOPIC`
 --
 
 DROP TABLE IF EXISTS `USER_COMMENT_TOPIC`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_COMMENT_TOPIC` (
   `id`    int(11)     NOT NULL AUTO_INCREMENT,
   `topic` varchar(50) NOT NULL,
@@ -2486,13 +2741,15 @@ CREATE TABLE `USER_COMMENT_TOPIC` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 12
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_CURRENCY_INVOICE_OPERATION_PERMISSION`
 --
 
 DROP TABLE IF EXISTS `USER_CURRENCY_INVOICE_OPERATION_PERMISSION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_CURRENCY_INVOICE_OPERATION_PERMISSION` (
   `user_id`                         int(11)                                         NOT NULL,
   `currency_id`                     int(11)                                         NOT NULL,
@@ -2507,13 +2764,15 @@ CREATE TABLE `USER_CURRENCY_INVOICE_OPERATION_PERMISSION` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_DOC`
 --
 
 DROP TABLE IF EXISTS `USER_DOC`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_DOC` (
   `id`      int(11)     NOT NULL AUTO_INCREMENT,
   `user_id` int(11)              DEFAULT NULL,
@@ -2526,15 +2785,17 @@ CREATE TABLE `USER_DOC` (
     ON UPDATE CASCADE
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 5105
+  AUTO_INCREMENT = 5294
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_FAVORITE_CURRENCY_PAIRS`
 --
 
 DROP TABLE IF EXISTS `USER_FAVORITE_CURRENCY_PAIRS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_FAVORITE_CURRENCY_PAIRS` (
   `user_id`          int(11) NOT NULL,
   `currency_pair_id` int(11) NOT NULL,
@@ -2550,13 +2811,15 @@ CREATE TABLE `USER_FAVORITE_CURRENCY_PAIRS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_INITIAL_EXCHANGE_OFFERINGS`
 --
 
 DROP TABLE IF EXISTS `USER_INITIAL_EXCHANGE_OFFERINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_INITIAL_EXCHANGE_OFFERINGS` (
   `id`    int(11)      NOT NULL AUTO_INCREMENT,
   `email` varchar(200) NOT NULL,
@@ -2565,14 +2828,17 @@ CREATE TABLE `USER_INITIAL_EXCHANGE_OFFERINGS` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 )
   ENGINE = InnoDB
+  AUTO_INCREMENT = 77
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_IP`
 --
 
 DROP TABLE IF EXISTS `USER_IP`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_IP` (
   `user_id`                int(40)      NOT NULL,
   `ip`                     varchar(100) NOT NULL,
@@ -2595,13 +2861,15 @@ CREATE TABLE `USER_IP` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_OPERATION`
 --
 
 DROP TABLE IF EXISTS `USER_OPERATION`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_OPERATION` (
   `id`            int(11)   NOT NULL AUTO_INCREMENT,
   `name`          varchar(45)        DEFAULT NULL,
@@ -2614,13 +2882,15 @@ CREATE TABLE `USER_OPERATION` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 5
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_OPERATION_AUTHORITY`
 --
 
 DROP TABLE IF EXISTS `USER_OPERATION_AUTHORITY`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_OPERATION_AUTHORITY` (
   `user_id`           int(11)    NOT NULL,
   `user_operation_id` int(11)    NOT NULL,
@@ -2632,13 +2902,15 @@ CREATE TABLE `USER_OPERATION_AUTHORITY` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_POLICES`
 --
 
 DROP TABLE IF EXISTS `USER_POLICES`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_POLICES` (
   `id`        int(11) NOT NULL AUTO_INCREMENT,
   `policy_id` int(11) NOT NULL,
@@ -2650,15 +2922,16 @@ CREATE TABLE `USER_POLICES` (
   CONSTRAINT `USER_POLICES_ibfk_2` FOREIGN KEY (`policy_id`) REFERENCES `POLICY` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 8
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ROLE`
 --
 
 DROP TABLE IF EXISTS `USER_ROLE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ROLE` (
   `id`                                int(40)     NOT NULL AUTO_INCREMENT,
   `name`                              varchar(45) NOT NULL,
@@ -2676,13 +2949,15 @@ CREATE TABLE `USER_ROLE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 13
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ROLE_BUSINESS_FEATURE`
 --
 
 DROP TABLE IF EXISTS `USER_ROLE_BUSINESS_FEATURE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ROLE_BUSINESS_FEATURE` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50)      DEFAULT NULL,
@@ -2691,13 +2966,15 @@ CREATE TABLE `USER_ROLE_BUSINESS_FEATURE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 10
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ROLE_GROUP_FEATURE`
 --
 
 DROP TABLE IF EXISTS `USER_ROLE_GROUP_FEATURE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ROLE_GROUP_FEATURE` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50)      DEFAULT NULL,
@@ -2706,13 +2983,15 @@ CREATE TABLE `USER_ROLE_GROUP_FEATURE` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 4
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ROLE_REPORT_GROUP_FEATURE`
 --
 
 DROP TABLE IF EXISTS `USER_ROLE_REPORT_GROUP_FEATURE`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ROLE_REPORT_GROUP_FEATURE` (
   `id`   int(11)     NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -2721,13 +3000,15 @@ CREATE TABLE `USER_ROLE_REPORT_GROUP_FEATURE` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_ROLE_SETTINGS`
 --
 
 DROP TABLE IF EXISTS `USER_ROLE_SETTINGS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_ROLE_SETTINGS` (
   `user_role_id`                   int(11)    NOT NULL,
   `order_acception_same_role_only` tinyint(1) NOT NULL DEFAULT '0',
@@ -2740,13 +3021,15 @@ CREATE TABLE `USER_ROLE_SETTINGS` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_STATUS`
 --
 
 DROP TABLE IF EXISTS `USER_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_STATUS` (
   `id`          int(40)     NOT NULL AUTO_INCREMENT,
   `name`        varchar(45) NOT NULL,
@@ -2756,13 +3039,15 @@ CREATE TABLE `USER_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 5
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_TRANSFER`
 --
 
 DROP TABLE IF EXISTS `USER_TRANSFER`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_TRANSFER` (
   `id`                int(11)       NOT NULL AUTO_INCREMENT,
   `from_user_id`      int(11)       NOT NULL,
@@ -2788,28 +3073,33 @@ CREATE TABLE `USER_TRANSFER` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 122
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `USER_VERIFICATION_INFO`
 --
 
 DROP TABLE IF EXISTS `USER_VERIFICATION_INFO`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USER_VERIFICATION_INFO` (
   `user_id`  int(11) NOT NULL,
   `doc_type` enum ('ID', 'P') DEFAULT 'P',
   `doc_id`   varchar(55)      DEFAULT NULL,
-  UNIQUE KEY `user_id` (`user_id`, `doc_type`)
+  UNIQUE KEY `user_id` (`user_id`, `doc_type`),
+  CONSTRAINT `fk_user_id_on_user_verification_info` FOREIGN KEY (`user_id`) REFERENCES `USER` (`id`)
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `WALLET`
 --
 
 DROP TABLE IF EXISTS `WALLET`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `WALLET` (
   `id`               int(40) NOT NULL AUTO_INCREMENT,
   `currency_id`      int(40) NOT NULL,
@@ -2829,15 +3119,17 @@ CREATE TABLE `WALLET` (
     ON DELETE CASCADE
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 42275008
+  AUTO_INCREMENT = 42203855
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `WITHDRAW_REQUEST`
 --
 
 DROP TABLE IF EXISTS `WITHDRAW_REQUEST`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `WITHDRAW_REQUEST` (
   `id`                       int(11)      NOT NULL             AUTO_INCREMENT,
   `acceptance`               timestamp    NULL                 DEFAULT NULL,
@@ -2883,15 +3175,17 @@ CREATE TABLE `WITHDRAW_REQUEST` (
   CONSTRAINT `fk_merchant_image_id` FOREIGN KEY (`merchant_image_id`) REFERENCES `MERCHANT_IMAGE` (`id`)
 )
   ENGINE = InnoDB
-  AUTO_INCREMENT = 69845
+  AUTO_INCREMENT = 76820
   DEFAULT CHARSET = utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `WITHDRAW_REQUEST_STATUS`
 --
 
 DROP TABLE IF EXISTS `WITHDRAW_REQUEST_STATUS`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `WITHDRAW_REQUEST_STATUS` (
   `id`   int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100)     DEFAULT NULL,
@@ -2900,13 +3194,15 @@ CREATE TABLE `WITHDRAW_REQUEST_STATUS` (
   ENGINE = InnoDB
   AUTO_INCREMENT = 16
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `authority`
 --
 
 DROP TABLE IF EXISTS `authority`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `authority` (
   `id`        int(11) NOT NULL,
   `authority` varchar(255) DEFAULT NULL,
@@ -2914,13 +3210,15 @@ CREATE TABLE `authority` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `credentials`
 --
 
 DROP TABLE IF EXISTS `credentials`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `credentials` (
   `id`       int(11)      NOT NULL,
   `enabled`  tinyint(1)   NOT NULL,
@@ -2931,26 +3229,30 @@ CREATE TABLE `credentials` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `credentials_authorities`
 --
 
 DROP TABLE IF EXISTS `credentials_authorities`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `credentials_authorities` (
   `credentials_id` bigint(20) NOT NULL,
   `authorities_id` bigint(20) NOT NULL
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_access_token`
 --
 
 DROP TABLE IF EXISTS `oauth_access_token`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_access_token` (
   `token_id`          varchar(255) DEFAULT NULL,
   `token`             longblob,
@@ -2962,13 +3264,15 @@ CREATE TABLE `oauth_access_token` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_approvals`
 --
 
 DROP TABLE IF EXISTS `oauth_approvals`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_approvals` (
   `userId`         varchar(255) DEFAULT NULL,
   `clientId`       varchar(255) DEFAULT NULL,
@@ -2979,13 +3283,15 @@ CREATE TABLE `oauth_approvals` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_client_details`
 --
 
 DROP TABLE IF EXISTS `oauth_client_details`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_client_details` (
   `client_id`               varchar(255) NOT NULL,
   `resource_ids`            varchar(255) DEFAULT NULL,
@@ -3001,13 +3307,15 @@ CREATE TABLE `oauth_client_details` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_client_token`
 --
 
 DROP TABLE IF EXISTS `oauth_client_token`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_client_token` (
   `token_id`          varchar(255) DEFAULT NULL,
   `token`             longblob,
@@ -3017,26 +3325,30 @@ CREATE TABLE `oauth_client_token` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_code`
 --
 
 DROP TABLE IF EXISTS `oauth_code`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_code` (
   `code`           varchar(255)   DEFAULT NULL,
   `authentication` varbinary(255) DEFAULT NULL
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `oauth_refresh_token`
 --
 
 DROP TABLE IF EXISTS `oauth_refresh_token`;
-
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oauth_refresh_token` (
   `token_id`       varchar(255) DEFAULT NULL,
   `token`          longblob,
@@ -3044,5 +3356,16 @@ CREATE TABLE `oauth_refresh_token` (
 )
   ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-SET FOREIGN_KEY_CHECKS = 1;
+/*!40103 SET TIME_ZONE = @OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE = @OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES = @OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-05-16 15:26:37

@@ -1,24 +1,6 @@
 version: "3.3"
 
 services:
-#  migration-server:
-#    image: migration_service:latest
-#    container_name: migration_server
-#    restart: always
-#    env_file: up-migrate.env
-#    ports:
-#    - "8080:8080"
-#    expose:
-#      - '8080'
-#    volumes:
-#      - /var:/var/scheme-migration-service/log
-#    depends_on:
-#      - up-db
-#      - up-reset-db
-#    links:
-#      - up-db
-#      - up-reset-db
-
   up-db:
     image: mysql
     container_name: core_up_database
@@ -30,17 +12,17 @@ services:
     - '3309'
     volumes:
     - db:/var/lib/mysql-one
-  up-reset-db:
-    image: mysql
-    container_name: core_up_reset_database
-    restart: always
-    env_file: up-reset-migrate.env
-    ports:
-    - '3303:3306'
-    expose:
-    - '3303'
-    volumes:
-    - db:/var/lib/mysql-two
+#  up-reset-db:
+#    image: mysql
+#    container_name: core_up_reset_database
+#    restart: always
+#    env_file: up-reset-migrate.env
+#    ports:
+#    - '3303:3306'
+#    expose:
+#    - '3303'
+#    volumes:
+#    - db:/var/lib/mysql-two
 
 volumes:
   db:

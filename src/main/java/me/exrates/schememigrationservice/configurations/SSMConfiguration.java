@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SSMConfiguration {
 
-    private static final String DEV_MODE = "dev";
+    private static final String DEV_MODE = "develop";
 
     @Autowired
     private SsmProperties ssmProperties;

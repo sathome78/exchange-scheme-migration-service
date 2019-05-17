@@ -65,7 +65,6 @@ public class FlywayConfiguration {
         configuration.setOutOfOrder(true);
 
         Flyway flyway = new Flyway(configuration);
-        flyway.repair();
         flyway.migrate();
         return flyway;
     }
