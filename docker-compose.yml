@@ -1,38 +1,17 @@
 version: "3.3"
 
 services:
-
-#------------------------------------------------------------
-#  up-migrate environment (for deploy uncomment below)
-#------------------------------------------------------------
-
-  up-db:
+  db:
     image: mysql
-    container_name: core_up_database
     restart: always
-    env_file: up-migrate.env
+    env_file:
+      - ${ENVIRONMENT_FILE}
     ports:
-    - '3309:3306'
+    - '3306:3306'
     expose:
-    - '3309'
+    - '3306'
     volumes:
-    - db:/var/lib/mysql-one
-
-#------------------------------------------------------------
-#    up-reset-migrate environment (for deploy uncomment below)
-#------------------------------------------------------------
-
-#  up-reset-db:
-#    image: mysql
-#    container_name: core_up_reset_database
-#    restart: always
-#    env_file: up-reset-migrate.env
-#    ports:
-#    - '3303:3306'
-#    expose:
-#    - '3303'
-#    volumes:
-#    - db:/var/lib/mysql-two
+    - db:/var/lib/mysql
 
 volumes:
   db:

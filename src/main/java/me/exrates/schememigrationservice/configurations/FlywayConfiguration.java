@@ -42,12 +42,11 @@ public class FlywayConfiguration {
     }
 
     @Bean
-    @Profile({"local", "up-reset-migrate"})
+    @Profile({"up-reset-migrate"})
     public Flyway flywayUpAndReset(@Qualifier("customDataSource") DataSource dataSource) {
         ClassicConfiguration configuration = new ClassicConfiguration();
         configuration.setDataSource(dataSource);
         configuration.setCleanDisabled(false);
-        configuration.setOutOfOrder(true);
 
         Flyway flyway = new Flyway(configuration);
         flyway.clean();
@@ -62,7 +61,6 @@ public class FlywayConfiguration {
         configuration.setDataSource(dataSource);
         configuration.setCleanDisabled(true);
         configuration.setBaselineOnMigrate(true);
-        configuration.setOutOfOrder(true);
 
         Flyway flyway = new Flyway(configuration);
         flyway.migrate();

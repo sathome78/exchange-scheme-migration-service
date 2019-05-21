@@ -1,11 +1,6 @@
 # scheme-migration-service
 
 **`Environments:`**
-- `Local (develop):`
-
-Process of migration to locally deployed database. Each time the database schema is cleaned and the migrations are re-rolled.
-
-**Property file:** application.properties
 
 - `Up-migrate (develop):`
 
@@ -32,8 +27,6 @@ Process of migration to remotely deployed database. Each time migrations roll da
 # Process of up and down docker containers
 From project root directory invoke command
 - to up container with database
-`docker-compose up -d`
+`ENVIRONMENT_FILE=YOUR_ENVIRONMENT_FILE.env docker-compose up -d`
 - to down container with database
 `docker-compose down`
-
-And, before deploy database in the docker container, do not forget comment out and uncomment required database services depending on the chosen environment.
