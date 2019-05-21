@@ -49,7 +49,6 @@ public class FlywayConfiguration {
         configuration.setCleanDisabled(false);
 
         Flyway flyway = new Flyway(configuration);
-        flyway.clean();
         flyway.migrate();
         return flyway;
     }

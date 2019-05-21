@@ -3,7 +3,8 @@ version: "3.3"
 services:
   db:
     image: mysql
-    restart: always
+    container_name: ${ENVIRONMENT}-db
+    restart: on-failure
     env_file:
       - ${ENVIRONMENT}.env
     ports:
@@ -11,7 +12,7 @@ services:
     expose:
     - '3306'
     volumes:
-    - db:/var/lib/mysql
+    - db:/var/lib/${ENVIRONMENT}-mysql
 
 volumes:
   db:
