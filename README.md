@@ -27,6 +27,6 @@ Process of migration to remotely deployed database. Each time migrations roll da
 # Process of up and down docker containers
 From project root directory invoke command
 - to up container with database
-`ENVIRONMENT_FILE=YOUR_ENVIRONMENT_FILE.env docker-compose up -d`
+`ENVIRONMENT=YOUR_ENVIRONMENT docker-compose up -d`
 - to down container with database
 `docker-compose down`
