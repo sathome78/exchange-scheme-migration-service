@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import javax.sql.DataSource;
@@ -42,33 +41,14 @@ public class FlywayConfiguration {
     }
 
     @Bean
-    @Profile({"up-reset-migrate"})
-    public Flyway flywayUpAndReset(@Qualifier("customDataSource") DataSource dataSource) {
+    public Flyway flyway(@Qualifier("customDataSource") DataSource dataSource) {
         ClassicConfiguration configuration = new ClassicConfiguration();
         configuration.setDataSource(dataSource);
-        configuration.setCleanDisabled(false);
-
-        Flyway flyway = new Flyway(configuration);
-        flyway.migrate();
-        return flyway;
-    }
-
-    @Bean
-    @Profile({"remote-migrate", "up-migrate"})
-    public Flyway flywayUp(@Qualifier("customDataSource") DataSource dataSource) {
-        ClassicConfiguration configuration = new ClassicConfiguration();
-        configuration.setDataSource(dataSource);
-        configuration.setCleanDisabled(true);
         configuration.setBaselineOnMigrate(true);
 
         Flyway flyway = new Flyway(configuration);
         flyway.migrate();
         return flyway;
-    }
-
-    @Bean
-    public Flyway flyway() {
-        return Flyway.configure().load();
     }
 
     @Bean
