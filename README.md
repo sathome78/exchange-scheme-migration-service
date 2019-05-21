@@ -2,7 +2,7 @@
 
 **`Environments:`**
 
-- `Up-migrate (develop):`
+- `up-migrate (develop):`
 
 Process of migration to database deployed in docker container. Each time migrations roll data into the database schema (without process of cleaning).
 
@@ -10,7 +10,7 @@ Process of migration to database deployed in docker container. Each time migrati
 
 **Docker compose file:** docker-compose.yml
 
-- `Up-reset-migrate (develop):`
+- `up-reset-migrate (develop):`
 
 Process of migration to database deployed in docker container. Each time the database schema is cleaned and the migrations are re-rolled.
 
@@ -18,7 +18,7 @@ Process of migration to database deployed in docker container. Each time the dat
 
 **Docker compose file:** docker-compose.yml
 
-- `Remote-migrate (production):`
+- `remote-migrate (production):`
 
 Process of migration to remotely deployed database. Each time migrations roll data into the database schema (without process of cleaning).
 
