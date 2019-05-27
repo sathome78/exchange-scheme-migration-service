@@ -92,7 +92,6 @@ public class FlywayConfiguration {
 
             String removeSchemaScriptFile = "db/init/remove-schema.sql";
             String addSchemaScriptFile = "db/init/add-schema.sql";
-            String addDataScriptFile = "db/init/test-data.sql";
 
             // Executing SQL Script
             try {
@@ -100,7 +99,6 @@ public class FlywayConfiguration {
                     scriptRunner.runScript(removeSchemaScriptFile);
                 }
                 scriptRunner.runScript(addSchemaScriptFile);
-                scriptRunner.runScript(addDataScriptFile);
             } catch (SQLException ex) {
                 log.error("SQL exception", ex);
             } catch (IOException ex) {
