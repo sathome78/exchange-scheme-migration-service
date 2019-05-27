@@ -20,5 +20,5 @@ Process of migration to remotely deployed database. Each time migrations roll da
 
 **Property file:** application-remote-migrate.properties
 
-# Process of create database locally
-Pay attention, before run application with chosen profile, you have to create database locally and add datasource configurations to application property file
+# Database configurations
+Pay attention, before run application with chosen profile, you have to create database locally (or choose remote database) and add datasource configurations to application property file
