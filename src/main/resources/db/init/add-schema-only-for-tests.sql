@@ -170,7 +170,7 @@ CREATE TABLE `admin_authority` (
   `hidden` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `admin_authority_role_defaults` (
   KEY `fk_auth_admin_auth_id_idx` (`admin_authority_id`),
   CONSTRAINT `fk_auth_admin_auth_id` FOREIGN KEY (`admin_authority_id`) REFERENCES `admin_authority` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_auth_user_role_id` FOREIGN KEY (`role_id`) REFERENCES `user_role` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,7 +224,7 @@ CREATE TABLE `api_auth_token` (
   `value` varchar(64) NOT NULL,
   `last_request` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +280,7 @@ CREATE TABLE `api_temp_password` (
   KEY `temporal_token_id` (`temporal_token_id`),
   CONSTRAINT `API_TEMP_PASSWORD_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `API_TEMP_PASSWORD_ibfk_2` FOREIGN KEY (`temporal_token_id`) REFERENCES `temporal_token` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,7 +303,7 @@ CREATE TABLE `authority` (
   `id` int(11) NOT NULL,
   `authority` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -616,7 +616,7 @@ CREATE TABLE `chat_in` (
   PRIMARY KEY (`id`),
   KEY `CHAT_RU` (`user_id`),
   CONSTRAINT `CHAT_IN_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -643,7 +643,7 @@ CREATE TABLE `chat_ko` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `CHAT_KO_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -754,7 +754,7 @@ CREATE TABLE `common_referral_root` (
   `user_id` int(11) DEFAULT NULL,
   KEY `COMMON_REFERRAL_ROOT` (`user_id`),
   CONSTRAINT `COMMON_REFERRAL_ROOT_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -815,7 +815,7 @@ CREATE TABLE `company_wallet` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `currency_id` (`currency_id`),
   CONSTRAINT `company_wallet_ibfk_1` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -845,7 +845,7 @@ CREATE TABLE `company_wallet_external` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_WALLET_EX_CURRENCIES_idx` (`currency_id`),
   CONSTRAINT `fk_WALLET_EX_CURRENCIES` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -899,7 +899,7 @@ CREATE TABLE `credentials` (
   `password` varchar(255) NOT NULL,
   `version` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -921,7 +921,7 @@ DROP TABLE IF EXISTS `credentials_authorities`;
 CREATE TABLE `credentials_authorities` (
   `credentials_id` bigint(20) NOT NULL,
   `authorities_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -952,7 +952,7 @@ CREATE TABLE `crypto_core_wallet` (
   KEY `crypto_core_wallet___fk_curr_id` (`currency_id`),
   CONSTRAINT `crypto_core_wallet___fk_curr_id` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`),
   CONSTRAINT `crypto_core_wallet___fk_merch_id` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1094,7 +1094,7 @@ CREATE TABLE `currency_pair_limit` (
   CONSTRAINT `currency_pair_limit___fk_cur_pair` FOREIGN KEY (`currency_pair_id`) REFERENCES `currency_pair` (`id`),
   CONSTRAINT `currency_pair_limit___fk_ord_type` FOREIGN KEY (`order_type_id`) REFERENCES `order_type` (`id`),
   CONSTRAINT `currency_pair_limit___fk_role` FOREIGN KEY (`user_role_id`) REFERENCES `user_role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1155,7 +1155,7 @@ CREATE TABLE `current_currency_rates` (
   UNIQUE KEY `currency_id` (`currency_id`),
   UNIQUE KEY `currency_name` (`currency_name`),
   CONSTRAINT `current_currency_rates_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1234,7 +1234,7 @@ CREATE TABLE `gtag_refill_requests` (
   `COUNT` int(11) DEFAULT NULL,
   PRIMARY KEY (`USER_ID`),
   CONSTRAINT `GTAG_REFILL_REQUESTS_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1271,7 +1271,7 @@ CREATE TABLE `ieo_claim` (
   CONSTRAINT `IEO_CLAIM_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `IEO_CLAIM_ibfk_2` FOREIGN KEY (`maker_id`) REFERENCES `user` (`id`),
   CONSTRAINT `IEO_CLAIM_ibfk_3` FOREIGN KEY (`ieo_id`) REFERENCES `ieo_details` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1310,7 +1310,7 @@ CREATE TABLE `ieo_details` (
   `description` text,
   `logo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1334,7 +1334,7 @@ CREATE TABLE `ieo_restricted_country` (
   `country_code` varchar(64) NOT NULL,
   UNIQUE KEY `ieo_id` (`ieo_id`,`country_code`),
   CONSTRAINT `IEO_RESTRICTED_COUNTRY_ibfk_1` FOREIGN KEY (`ieo_id`) REFERENCES `ieo_details` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1360,7 +1360,7 @@ CREATE TABLE `ieo_result` (
   `status` enum('SUCCESS','FAILED','NONE') NOT NULL DEFAULT 'NONE',
   KEY `ieo_id` (`ieo_id`),
   CONSTRAINT `IEO_RESULT_ibfk_1` FOREIGN KEY (`ieo_id`) REFERENCES `ieo_details` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1384,7 +1384,7 @@ CREATE TABLE `ieo_subscribe` (
   `email_subscribe` tinyint(1) NOT NULL DEFAULT '0',
   `telegram_subscribe` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1443,7 +1443,7 @@ CREATE TABLE `internal_wallet_balances` (
   KEY `internal_wallet_balances_role_id_fk` (`role_id`),
   CONSTRAINT `internal_wallet_balances_currency_id_fk` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`),
   CONSTRAINT `internal_wallet_balances_role_id_fk` FOREIGN KEY (`role_id`) REFERENCES `user_role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1551,7 +1551,7 @@ CREATE TABLE `ip_log` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_IP_Logs_USERS1_idx` (`user_id`),
   CONSTRAINT `fk_IP_Logs_USERS1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1683,7 +1683,7 @@ CREATE TABLE `merchant_currency` (
   KEY `MERCHANTS` (`currency_id`),
   CONSTRAINT `merchant_currency_ibfk_1` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `merchant_currency_ibfk_2` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1713,7 +1713,7 @@ CREATE TABLE `merchant_image` (
   PRIMARY KEY (`id`),
   KEY `fk_MERCHANT_id_idx` (`merchant_id`),
   CONSTRAINT `fk3_MERCHANT_id` FOREIGN KEY (`merchant_id`) REFERENCES `merchant` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1943,7 +1943,7 @@ CREATE TABLE `notification_event` (
   `default_send_email` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1973,7 +1973,7 @@ CREATE TABLE `notification_options` (
   CONSTRAINT `fk_notification_event_id1` FOREIGN KEY (`notification_event_id`) REFERENCES `notification_event` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_user_id_nop` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2000,7 +2000,7 @@ CREATE TABLE `oauth_access_token` (
   `client_id` varchar(255) DEFAULT NULL,
   `authentication` longblob,
   `refresh_token` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2026,7 +2026,7 @@ CREATE TABLE `oauth_approvals` (
   `status` varchar(10) DEFAULT NULL,
   `expiresAt` datetime DEFAULT NULL,
   `lastModifiedAt` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2057,7 +2057,7 @@ CREATE TABLE `oauth_client_details` (
   `refresh_token_validity` int(11) DEFAULT NULL,
   `additional_information` varchar(255) DEFAULT NULL,
   `autoapprove` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2082,7 +2082,7 @@ CREATE TABLE `oauth_client_token` (
   `authentication_id` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   `client_id` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2104,7 +2104,7 @@ DROP TABLE IF EXISTS `oauth_code`;
 CREATE TABLE `oauth_code` (
   `code` varchar(255) DEFAULT NULL,
   `authentication` varbinary(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2127,7 +2127,7 @@ CREATE TABLE `oauth_refresh_token` (
   `token_id` varchar(255) DEFAULT NULL,
   `token` longblob,
   `authentication` longblob
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2162,7 +2162,7 @@ CREATE TABLE `open_api_user_token` (
   KEY `open_api_user_token___fk_user_id` (`user_id`),
   KEY `open_api_user_token__idx_is_active_user_id` (`is_active`,`user_id`),
   CONSTRAINT `open_api_user_token___fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2317,7 +2317,7 @@ CREATE TABLE `policy` (
   `description` text NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2349,7 +2349,7 @@ CREATE TABLE `qubera_response_log` (
   `transferType` varchar(150) DEFAULT NULL,
   `rejectionReason` text,
   PRIMARY KEY (`paymentId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2377,7 +2377,7 @@ CREATE TABLE `qubera_user_details` (
   KEY `fk_qubera_user_details_on_currencies` (`currency_id`),
   CONSTRAINT `fk_qubera_user_details_on_currencies` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_qubera_user_details_on_users` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2402,7 +2402,7 @@ CREATE TABLE `referral_level` (
   `percent` double DEFAULT NULL,
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2438,7 +2438,7 @@ CREATE TABLE `referral_transaction` (
   CONSTRAINT `REFERRAL_TRANSACTION_ibfk_2` FOREIGN KEY (`referral_level_id`) REFERENCES `referral_level` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `REFERRAL_TRANSACTION_ibfk_3` FOREIGN KEY (`initiator_id`) REFERENCES `user` (`id`),
   CONSTRAINT `REFERRAL_TRANSACTION_ibfk_4` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2464,7 +2464,7 @@ CREATE TABLE `referral_user_graph` (
   KEY `REFERRAL_USER_GRAPH` (`parent`),
   CONSTRAINT `REFERRAL_USER_GRAPH_ibfk_2` FOREIGN KEY (`parent`) REFERENCES `user` (`id`),
   CONSTRAINT `referral_user_graph_ibfk_1` FOREIGN KEY (`child`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2700,7 +2700,7 @@ CREATE TABLE `report_subscribers` (
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `REPORT_SUBSCRIBERS_email_uindex` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2732,7 +2732,7 @@ CREATE TABLE `schema_version` (
   `success` tinyint(1) NOT NULL,
   PRIMARY KEY (`installed_rank`),
   KEY `schema_version_s_idx` (`success`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2872,7 +2872,7 @@ CREATE TABLE `stock_currency_pair` (
   KEY `fk_stock_corrency_pair_id_idx` (`currency_pair_id`),
   CONSTRAINT `fk_stock_corrency_pair_id` FOREIGN KEY (`currency_pair_id`) REFERENCES `currency_pair` (`id`),
   CONSTRAINT `fk_stock_curr_pair_stock_ex_id` FOREIGN KEY (`stock_exchange_id`) REFERENCES `stock_exchange` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2903,7 +2903,7 @@ CREATE TABLE `stock_exchange` (
   `volume_field_name` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2966,7 +2966,7 @@ CREATE TABLE `stock_exrate` (
   KEY `stock_exrate__idx_cur_id_ex_id_date` (`currency_pair_id`,`stock_exchange_id`,`date`),
   CONSTRAINT `fk_STOCK_CURRENCY_PAIR_id` FOREIGN KEY (`currency_pair_id`) REFERENCES `currency_pair` (`id`),
   CONSTRAINT `fk_stock_exchange_id` FOREIGN KEY (`stock_exchange_id`) REFERENCES `stock_exchange` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3191,7 +3191,7 @@ CREATE TABLE `temporal_token` (
   KEY `fk_TEMPORAL_TOKEN_TYPE_idx` (`token_type_id`),
   CONSTRAINT `fk_REGISTRATION_TOKEN_USER1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `fk_TEMPORAL_TOKEN_TYPE` FOREIGN KEY (`token_type_id`) REFERENCES `token_type` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3283,7 +3283,7 @@ CREATE TABLE `transaction` (
   CONSTRAINT `transaction_ibfk_5` FOREIGN KEY (`operation_type_id`) REFERENCES `operation_type` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `transaction_ibfk_6` FOREIGN KEY (`company_wallet_id`) REFERENCES `company_wallet` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `transaction_status_fk` FOREIGN KEY (`status_id`) REFERENCES `transaction_status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3380,7 +3380,7 @@ CREATE TABLE `transfer_request` (
   CONSTRAINT `FK_transfer_request_transfer_request_status` FOREIGN KEY (`status_id`) REFERENCES `transfer_request_status` (`id`),
   CONSTRAINT `FK_transfer_request_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `FK_transfer_request_user_2` FOREIGN KEY (`recipient_user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3492,7 +3492,7 @@ CREATE TABLE `user_admin_authority` (
   KEY `fk_admin_authority_id_idx` (`admin_authority_id`),
   CONSTRAINT `fk_admin_authority_id` FOREIGN KEY (`admin_authority_id`) REFERENCES `admin_authority` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_id_auth` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3612,7 +3612,7 @@ CREATE TABLE `user_currency_invoice_operation_permission` (
   KEY `u_op_perm_op_direction_id_fk` (`operation_direction_id`),
   CONSTRAINT `FK_user_currency_invoice_permission_invoice_permission` FOREIGN KEY (`invoice_operation_permission_id`) REFERENCES `invoice_operation_permission` (`id`),
   CONSTRAINT `u_op_perm_op_direction_id_fk` FOREIGN KEY (`operation_direction_id`) REFERENCES `invoice_operation_direction` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3639,7 +3639,7 @@ CREATE TABLE `user_doc` (
   UNIQUE KEY `path` (`path`),
   KEY `USER_DOCS` (`user_id`),
   CONSTRAINT `USER_DOC_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3666,7 +3666,7 @@ CREATE TABLE `user_favorite_currency_pairs` (
   KEY `user_cp_cp_fk` (`currency_pair_id`),
   CONSTRAINT `USER_FAVORITE_CURRENCY_PAIRS_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `USER_FAVORITE_CURRENCY_PAIRS_ibfk_2` FOREIGN KEY (`currency_pair_id`) REFERENCES `currency_pair` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3776,7 +3776,7 @@ CREATE TABLE `user_operation_authority` (
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`,`user_operation_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3804,7 +3804,7 @@ CREATE TABLE `user_polices` (
   KEY `policy_id` (`policy_id`),
   CONSTRAINT `USER_POLICES_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `USER_POLICES_ibfk_2` FOREIGN KEY (`policy_id`) REFERENCES `policy` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3909,7 +3909,7 @@ CREATE TABLE `user_role_report_group_feature` (
   `name` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_role_report_group_feature_name_uindex` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4023,7 +4023,7 @@ CREATE TABLE `user_verification_info` (
   `doc_id` varchar(55) DEFAULT NULL,
   UNIQUE KEY `user_id` (`user_id`,`doc_type`),
   CONSTRAINT `fk_user_id_on_user_verification_info` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4056,7 +4056,7 @@ CREATE TABLE `wallet` (
   KEY `fk_WALLET_USERS1_idx` (`user_id`),
   CONSTRAINT `fk_WALLET_CURRENCIES1` FOREIGN KEY (`currency_id`) REFERENCES `currency` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_WALLET_USERS1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=IInnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -6,6 +6,12 @@
 
 Process of migration to locally deployed database. Each time migrations roll data into the database schema (without process of cleaning).
 
+**Property file:** application-up-test-migrate.properties
+
+- `up-test-migrate (develop):`
+
+Process of migration to locally deployed database. Each time migrations roll data into the database schema (without process of cleaning).
+
 **Property file:** application-up-migrate.properties
 
 - `up-reset-migrate (develop):`
