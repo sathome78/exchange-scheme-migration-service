@@ -5,6 +5,7 @@ import lombok.Getter;
 @Getter
 public enum ProfilesEnum {
 
+    EMPTY_SCHEMA("empty-schema"),
     UP_MIGRATE("up-migrate"),
     UP_RESET_MIGRATE("up-reset-migrate"),
     REMOTE_MIGRATE("remote-migrate");

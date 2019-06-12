@@ -20,5 +20,11 @@ Process of migration to remotely deployed database. Each time migrations roll da
 
 **Property file:** application-remote-migrate.properties
 
+- `empty-schema (only for testing):`
+
+Each time migrations database with empty structure is up.
+
+**Property file:** application-empty-schema.properties
+
 # Database configurations
 Pay attention, before run application with chosen profile, you have to create database locally (or choose remote database) and add datasource configurations to application property file
