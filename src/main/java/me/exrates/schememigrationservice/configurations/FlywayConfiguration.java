@@ -98,8 +98,7 @@ public class FlywayConfiguration {
             try {
                 if (ProfilesEnum.UP_RESET_MIGRATE.getName().equals(environment.getActiveProfiles()[0])) {
                     scriptRunner.runScript(removeSchemaScriptFile);
-                }
-                if (ProfilesEnum.UP_TEST_MIGRATE.getName().equals(environment.getActiveProfiles()[0])) {
+                } else if (ProfilesEnum.UP_TEST_MIGRATE.getName().equals(environment.getActiveProfiles()[0])) {
                     scriptRunner.runScript(addTestSchemaScriptFile);
                 } else {
                     scriptRunner.runScript(addSchemaScriptFile);
