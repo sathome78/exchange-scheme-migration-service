@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
@@ -92,13 +93,20 @@ public class FlywayConfiguration {
 
             String removeSchemaScriptFile = "db/init/remove-schema.sql";
             String addSchemaScriptFile = "db/init/add-schema.sql";
+            String emptySchemaScriptFile = "db/init/add-schema.sql";
 
+            final String activeProfile = environment.getActiveProfiles()[0];
             // Executing SQL Script
             try {
-                if (ProfilesEnum.UP_RESET_MIGRATE.getName().equals(environment.getActiveProfiles()[0])) {
-                    scriptRunner.runScript(removeSchemaScriptFile);
+                if (ProfilesEnum.EMPTY_SCHEMA.getName().equals(activeProfile)) {
+
+                    scriptRunner.runScript(emptySchemaScriptFile);
+                } else {
+                    if (ProfilesEnum.UP_RESET_MIGRATE.getName().equals(activeProfile)) {
+                        scriptRunner.runScript(removeSchemaScriptFile);
+                    }
+                    scriptRunner.runScript(addSchemaScriptFile);
                 }
-                scriptRunner.runScript(addSchemaScriptFile);
             } catch (SQLException ex) {
                 log.error("SQL exception", ex);
             } catch (IOException ex) {
