@@ -93,13 +93,12 @@ public class FlywayConfiguration {
 
             String removeSchemaScriptFile = "db/init/remove-schema.sql";
             String addSchemaScriptFile = "db/init/add-schema.sql";
-            String emptySchemaScriptFile = "db/init/add-schema.sql";
+            String emptySchemaScriptFile = "db/init/empty-schema.sql";
 
             final String activeProfile = environment.getActiveProfiles()[0];
             // Executing SQL Script
             try {
                 if (ProfilesEnum.EMPTY_SCHEMA.getName().equals(activeProfile)) {
-
                     scriptRunner.runScript(emptySchemaScriptFile);
                 } else {
                     if (ProfilesEnum.UP_RESET_MIGRATE.getName().equals(activeProfile)) {
